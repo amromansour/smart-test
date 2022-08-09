@@ -1,0 +1,16 @@
+<h1>register works!</h1>
+
+<br />
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate autocomplete="on">
+    <input type="text" formControlName="fName">
+
+    <br />
+
+    <span style="color: red;" *ngIf="f['fName'].errors?.['required'] && f['fName'].touched">Name is
+        required</span>
+
+    <br />
+
+    <button [disabled]="!form.valid" type="submit">Reg</button>
+
+</form>
